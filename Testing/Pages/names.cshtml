@@ -1,0 +1,32 @@
+﻿@page
+@model Testing.Pages.namesModel
+@{
+}
+<br />
+<h2> List of Names</h2>
+<a class='btn-primary btn-sm' href='/Testing/Create'>New Client</a>
+<table class="table">
+
+    <thead>
+        <tr>
+            
+            <th>ID</th>
+            <th>Fullname</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var name in Model.ListNames)
+        {
+        <tr>
+
+            <td>@name.ID</td>
+            <td>@name.fullname</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/testing/edit?=@name.ID">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/testing/delete?=@name.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
